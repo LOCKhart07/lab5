@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: spark-kafka-postgres
+  labels:
+    app: spark-kafka-postgres
+    version: v1.1
+spec:
+  serviceName: spark-kafka-postgres-headless-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spark-kafka-postgres
+      version: v1.1
+  template:
+    metadata:
+      labels:
+        app: spark-kafka-postgres
+        version: v1.1
+    spec:
+      serviceAccountName: spark-driver
+      containers:
+        - name: kafka-postgres
+          image: <your-docker-hub-username>/kafka-postgres:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: POSTGRES_URL
+              value: "postgres-service:8529"
+            - name: POSTGRES_PASSWORD
+              value: ""
+            - name: POSTGRES_USERNAME
+              value: ""
+            - name: KAFKA_BOOTSTRAP_SERVER
+              value: ""
+            - name: KAFKA_READ_TOPIC
+              value: ""
+            - name: SPARK_KUBERNETES_CONTAINER_IMAGE
+              value:
+            - name: SPARK_KUBERNETES_DRIVER_MASTER
+              value:
+            - name: SPARK_KUBERNETES_DRIVER_POD_NAME
+              value:
+            - name: SPARK_KUBERNETES_AUTHENTICATE_DRIVER_SERVICE_ACCOUNT_NAME
+              value:
+            - name: SPARK_KUBERNETES_EXECUTOR_PODNAMEPREFIX
+              value:
+            - name: SPARK_DRIVER_HOST
+              value:
+            - name: SPARK_DRIVER_PORT
+              value:
+            - name: SPARK_EXECUTOR_CORES
+              value:
+            - name: SPARK_EXECUTOR_MEMORY
+              value:
