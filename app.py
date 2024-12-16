@@ -29,6 +29,7 @@ spark = (
     .config("spark.driver.port", env_variables.SPARK_DRIVER_PORT)
     .config("spark.kubernetes.authenticate.driver.serviceAccountName", env_variables.SPARK_KUBERNETES_AUTHENTICATE_DRIVER_SERVICE_ACCOUNT_NAME)
     .config("spark.kubernetes.executor.podNamePrefix", env_variables.SPARK_KUBERNETES_EXECUTOR_PODNAMEPREFIX)
+    .config("spark.executor.instances", env_variables.SPARK_EXECUTOR_CORES)
     .config("spark.executor.cores", env_variables.SPARK_EXECUTOR_CORES)
     .config("spark.executor.memory", env_variables.SPARK_EXECUTOR_MEMORY)
     .appName("Kafka to PostgreSQL")

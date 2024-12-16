@@ -1,0 +1,4 @@
+CREATE TABLE wine_quality (
+    wine_name VARCHAR(255) NOT NULL,
+    quality INTEGER NOT NULL
+);

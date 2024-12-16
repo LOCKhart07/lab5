@@ -1,4 +1,5 @@
-FROM python:3.8-slim
+# FROM python:3.10
+FROM apache/spark-py:v3.4.0
 
 # Set the working directory to /app
 WORKDIR /app
@@ -16,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Run the command to start the application
-CMD ["spark-submit", "--jars", "./jars/postgresql-42.7.4.jar", "app.py"]
+CMD ["spark-submit", "--jars", "/app/jars/postgresql-42.7.4.jar", "/app/app.py"]
