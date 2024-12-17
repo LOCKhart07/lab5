@@ -1,5 +1,3 @@
-Here is the formatted README:
-
 **Setup Instructions**
 
 ### Docker Desktop
