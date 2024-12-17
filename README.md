@@ -18,6 +18,7 @@ Here is the formatted README:
 
 ### Kafka (Strimzi)
 
+* Documentation: [https://strimzi.io/quickstarts/](https://strimzi.io/quickstarts/)
 * Create a namespace for Kafka: `kubectl create namespace kafka`
 * Install Strimzi: `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
 * Verify Strimzi installation: `kubectl get pod -n kafka --watch`
@@ -34,6 +35,7 @@ Here is the formatted README:
 
 ### Spark RBAC
 
+* Documentation: [https://spark.apache.org/docs/3.5.3/running-on-kubernetes.html](https://spark.apache.org/docs/3.5.3/running-on-kubernetes.html)
 * Create a Spark service account: `kubectl create serviceaccount spark`
 * Create a Spark cluster role binding: `kubectl create clusterrolebinding spark-role --clusterrole=edit --serviceaccount=default:spark --namespace=default`
 
