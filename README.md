@@ -1,4 +1,4 @@
-**Setup Instructions**
+## **Setup Instructions**
 
 ### Docker Desktop
 
