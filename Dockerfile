@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Run the command to start the application
-CMD ["spark-submit", "--jars", "/app/jars/postgresql-42.7.4.jar", "/app/app.py"]
+CMD ["spark-submit", "--packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1", "--jars", "/app/jars/postgresql-42.7.4.jar", "/app/app.py"]
