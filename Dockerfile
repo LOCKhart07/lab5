@@ -1,5 +1,5 @@
-# FROM python:3.10
-FROM apache/spark-py:v3.4.0
+FROM python:3.10
+# FROM apache/spark-py:v3.4.0
 
 # Set the working directory to /app
 WORKDIR /app
