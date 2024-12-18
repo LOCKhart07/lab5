@@ -26,7 +26,7 @@ spec:
             - containerPort: 8080
           env:
             - name: POSTGRES_URL
-              value: "jdbc:postgresql://postgres-service:5432/mydatabase"
+              value: "jdbc:postgresql://postgres-svc:5432/mydatabase"
             - name: POSTGRES_PASSWORD
               value: "root"
             - name: POSTGRES_USERNAME
