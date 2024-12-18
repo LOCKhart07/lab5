@@ -1,4 +1,5 @@
-FROM python:3.10
+# FROM python:3.10
+FROM bitnami/spark:3.5.1
 # FROM apache/spark-py:v3.4.0
 
 # Set the working directory to /app

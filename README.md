@@ -26,10 +26,8 @@
 
 ### Postgres
 
-* Apply the Postgres deployment: `kubectl apply -f postgres-deployment.yaml`
-* Apply the Postgres service: `kubectl apply -f postgres-service.yaml`
-* Run a Postgres shell: `kubectl exec -it deployment/postgres -- psql -d mydatabase`
-* Create required table `CREATE TABLE wine_quality ( wine_name VARCHAR(255) NOT NULL, quality INTEGER NOT NULL );`
+* Apply the Postgres deployment: `kubectl apply -f postgres/postgres-deployment.yaml`
+* Apply the Postgres service: `kubectl apply -f postgres/postgres-service.yaml`
 
 ### Spark RBAC
 
@@ -43,4 +41,6 @@
 * Push image to repo: `docker push <dockerhub_account>/<image_name>:<version>`
 
 ### Kubernetes deployment
+* Create a headless service: `kubectl apply -f spark-headless-svc.yaml`
 * Run our streaming pipeline: `kubectl apply -f deployment.yaml`
+

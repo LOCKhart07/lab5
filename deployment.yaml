@@ -21,7 +21,7 @@ spec:
       serviceAccountName: spark
       containers:
         - name: kafka-postgres
-          image: lockhart07/ttt_spark_lab5:v1.2
+          image: lockhart07/ttt_spark_lab5:v3.0
           ports:
             - containerPort: 8080
           env:
@@ -36,7 +36,7 @@ spec:
             - name: KAFKA_READ_TOPIC
               value: "wine"
             - name: SPARK_KUBERNETES_CONTAINER_IMAGE
-              value: "lockhart07/ttt_spark_lab5:v1.2"
+              value: "lockhart07/ttt_spark_lab5:v3.0"
             - name: SPARK_KUBERNETES_DRIVER_MASTER
               value: "k8s://http://127.0.0.1:6443"
             - name: SPARK_KUBERNETES_DRIVER_POD_NAME
