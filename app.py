@@ -15,7 +15,7 @@ os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 # {'frame_number': frame_nmr, 'license_plates': texts}
 json_schema = StructType(
     [
-        StructField("frame_number", DecimalType(), True),
+        StructField("frame_number", StringType(), True),
         StructField("license_plates", StringType(), True),
     ]
 )
