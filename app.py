@@ -1,6 +1,6 @@
 from pyspark.sql.functions import col, from_json
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, DoubleType
+from pyspark.sql.types import StructType, StructField, StringType, DecimalType
 
 import os, sys
 
@@ -12,10 +12,11 @@ os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 
 
 # Define the schema for the JSON data
+# {'frame_number': frame_nmr, 'license_plates': texts}
 json_schema = StructType(
     [
-        StructField("wine_name", StringType(), True),
-        StructField("quality", DoubleType(), True),
+        StructField("frame_number", DecimalType(), True),
+        StructField("license_plates", StringType(), True),
     ]
 )
 
@@ -54,7 +55,7 @@ def process_batches(df, epoch_id):
         df.write.format("jdbc")
         .mode("append")
         .option("url", env_variables.POSTGRES_URL)
-        .option("dbtable", "wines")
+        .option("dbtable", "license_plates")
         .option("user", env_variables.POSTGRES_USERNAME)
         .option("password", env_variables.POSTGRES_PASSWORD)
         .option("driver", "org.postgresql.Driver")
